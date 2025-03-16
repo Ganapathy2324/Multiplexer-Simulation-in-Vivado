@@ -78,12 +78,10 @@ and g5(w[4],s[0],w[1],c);
 and g6(w[5],s[0],s[1],d);
 or o1(y,w[2],w[3],w[4],w[5]);
 endmodule
-
-##OUTPUT
+```
+## OUTPUT
 ![Screenshot 2025-03-16 120538](https://github.com/user-attachments/assets/20ab86ec-083c-43ee-8f95-306611e767b3)
 
-
-```
 ### 4:1 MUX Data Flow Implementation
 ```verilog
 `timescale 1ns / 1ps
@@ -98,11 +96,10 @@ assign w[2]=~s[1]&s[0]&c;
 assign w[3]=s[0]&s[1]&d;
 assign y=w[1]|w[2]|w[3]|w[0];
 endmodule
-
-##OUTPUT
+```
+## OUTPUT
 ![Screenshot 2025-03-16 121058](https://github.com/user-attachments/assets/ca56ff3e-4156-464d-bf07-723c36179403)
 
-```
 ### 4:1 MUX Behavioral Implementation
 ```verilog
 `timescale 1ns / 1ps
@@ -122,12 +119,10 @@ else if(s[1]==1&s[0]==1)
 y=i[4];
 end
 endmodule
-
-##OUTPUT
+```
+## OUTPUT
 ![Screenshot 2025-03-16 121409](https://github.com/user-attachments/assets/a93837a5-25ab-4522-ae0c-ccaa3bdf8842)
 
-
-```
 ### 4:1 MUX Structural Implementation
 
 ![image](https://github.com/user-attachments/assets/eea81c2c-7dfa-43aa-9cea-1ab4ed54db6c)
@@ -160,11 +155,10 @@ module mux4_to_1_structural (
 
     mux2_to_1 mux_final (.A(mux_low), .B(mux_high), .S(S1), .Y(Y));
 endmodule
-
-OUTPUT
+```
+## OUTPUT
 ![Screenshot 2025-03-16 124002](https://github.com/user-attachments/assets/2fed5185-8df7-4563-b68d-1d712d1a42ac)
 
-```
 ### Testbench Implementation
 ```verilog
 `timescale 1ns / 1ps
